@@ -10,7 +10,7 @@ spec:
     - name: remove
       image: alpine:3
       env:
-        - name: {WORKSPACE_SOURCE_PATH}
+        - name: WORKSPACE_SOURCE_PATH
           value: $(workspaces.source.path)
       workingDir: $(workspaces.source.path)
       securityContext:
@@ -36,7 +36,7 @@ spec:
     - name: nosetests
       image: python:3.9-slim
       env:
-        - name: {WORKSPACE_SOURCE_PATH}
+        - name: WORKSPACE_SOURCE_PATH
           value: $(workspaces.source.path)
       workingDir: $(workspaces.source.path)
       securityContext:
